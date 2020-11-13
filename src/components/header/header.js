@@ -13,7 +13,7 @@ const HeaderTitle = styled.h3`
     color: #fff;
     margin: 0;
 `;
-
+// eslint-disable-next-line no-alert, quotes, semi
 const HeaderLinks = styled.ul`
     display: flex;
     margin: 0;
@@ -24,29 +24,49 @@ const HeaderLinks = styled.ul`
         margin-right: 20px;
         font-size: 18px;
     }
-`;
+`
+const LinkStyleA = styled.a`
+    color: inherit;
+    text-decoration: none;
 
+    &:hover{
+        text-decoration: none;
+        color: inherit;
+    }
+    &:visited{
+        text-decoration: none;
+        color: inherit;
+    }
+    &:focus{
+        text-decoration: none;
+        color: inherit;
+    }
+    &:active{
+        text-decoration: none;
+        color: inherit;
+    }
+`
 const Header = () => {
     return (
         <HeaderBlock>
             <HeaderTitle>
-                <a href="#">
+                <LinkStyleA href="#">
                 Game of Thrones DB
-                </a>
+                </LinkStyleA>
             </HeaderTitle>
             <HeaderLinks>
                 <li>
-                    <a href="#">Characters</a>
+                    <LinkStyleA href="#">Characters</LinkStyleA>
                 </li>
                 <li>
-                    <a href="#">Houses</a>
+                    
+                    <LinkStyleA href="#">Houses</LinkStyleA> 
                 </li>
                 <li>
-                    <a href="#">Books</a>   
+                    <LinkStyleA href="#">Books</LinkStyleA>   
                 </li>
             </HeaderLinks>
         </HeaderBlock>
     );
 };
-
 export default Header;

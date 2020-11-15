@@ -46,7 +46,6 @@ export default class CharDetails extends Component {
             .then((char) => {
                 this.setState({char})
             })
-        
     }
 
 

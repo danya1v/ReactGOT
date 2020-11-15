@@ -30,7 +30,7 @@ export default class ItemList extends Component {
                 <ItemListBlock 
                 key={i} 
                 className="list-group-item"
-                // onClick = {this.props.onCharSelected(i)}
+                onClick = {() => this.props.onCharSelected(41 + i)}
                 >
                    {item.name}
                 </ItemListBlock>
@@ -53,4 +53,4 @@ export default class ItemList extends Component {
             </ul>
         );
     }
-}
+} 

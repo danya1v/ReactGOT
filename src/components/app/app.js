@@ -5,8 +5,14 @@ import RandomChar from "../randomChar";
 import { Button } from "reactstrap";
 import ErrorMessage from '../errorMessage/errorMessage';
 import CharacterPage from '../characterPage';
+import ItemList from "../itemList";
+import CharDetails from "../charDetails";
+import gotService from '../../services/gotService';
+
 
 export default class App extends Component {
+  gotService = new gotService();
+
   state = {
     visible: true,
     nameOpen: "Открыть",
@@ -60,8 +66,30 @@ export default class App extends Component {
             </Col>
           </Row>
           <CharacterPage/>
-          <CharacterPage/>
-          <CharacterPage/>
+          <Row>
+         <Col md="6">
+           <ItemList 
+           onItemSelected={this.onItemSelected}
+           getData={this.gotService.getAllBooks}
+           renderItem={(item) => item.name}
+           />
+         </Col>
+         <Col md="6">
+           <CharDetails charId={this.state.selectedChar}/>
+         </Col>
+       </Row>
+       <Row>
+         <Col md="6">
+           <ItemList 
+           onItemSelected={this.onItemSelected}
+           getData={this.gotService.getAllHouses}
+           renderItem={(item) => item.name}
+           />
+         </Col>
+         <Col md="6">
+           <CharDetails charId={this.state.selectedChar}/>
+         </Col>
+       </Row>
         </Container>
       </>
     );

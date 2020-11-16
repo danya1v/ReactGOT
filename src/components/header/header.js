@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import {Link} from 'react-router-dom';
 
 const HeaderBlock = styled.div`
     display: flex;
@@ -10,60 +11,69 @@ const HeaderBlock = styled.div`
 
 const HeaderTitle = styled.h3`
     font-size: 24px;
-    color: #fff;
     margin: 0;
+    a{
+        color: #ffffff;
+        text-decoration: none;
+        &:hover{
+            text-decoration: none;
+            color: #ffffff;
+        }
+    }
 `;
 // eslint-disable-next-line no-alert, quotes, semi
 const HeaderLinks = styled.ul`
     display: flex;
     margin: 0;
     align-items: center;
-    color: #fff;
     list-style-type: none;
     li {
+        a{
+            color: #ffffff;
+            text-decoration: none;
+        }
         margin-right: 20px;
         font-size: 18px;
     }
 `
-const LinkStyleA = styled.a`
-    color: inherit;
-    text-decoration: none;
+// const Link = styled.a`
+//     color: inherit;
+//     text-decoration: none;
 
-    &:hover{
-        text-decoration: none;
-        color: inherit;
-    }
-    &:visited{
-        text-decoration: none;
-        color: inherit;
-    }
-    &:focus{
-        text-decoration: none;
-        color: inherit;
-    }
-    &:active{
-        text-decoration: none;
-        color: inherit;
-    }
-`
+//     &:hover{
+//         text-decoration: none;
+//         color: inherit;
+//     }
+//     &:visited{
+//         text-decoration: none;
+//         color: inherit;
+//     }
+//     &:focus{
+//         text-decoration: none;
+//         color: inherit;
+//     }
+//     &:active{
+//         text-decoration: none;
+//         color: inherit;
+//     }
+// `
 const Header = () => {
     return (
         <HeaderBlock>
             <HeaderTitle>
-                <LinkStyleA href="#">
-                Game of Thrones DB
-                </LinkStyleA>
+            <Link to ='/'> Game of Thrones DB</Link>
             </HeaderTitle>
             <HeaderLinks>
                 <li>
-                    <LinkStyleA href="#">Characters</LinkStyleA>
+                    
+                <Link to ='/characters/'> Characters</Link>
                 </li>
                 <li>
                     
-                    <LinkStyleA href="#">Houses</LinkStyleA> 
+                    <Link to ='/houses/'>Houses</Link> 
                 </li>
                 <li>
-                    <LinkStyleA href="#">Books</LinkStyleA>   
+                    <Link to ='/books/'>Books</Link>   
                 </li>
             </HeaderLinks>
         </HeaderBlock>

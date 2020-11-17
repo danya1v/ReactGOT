@@ -47,8 +47,11 @@ export default class GotService {
         if (data) {
             return data
         } else {
-            return 'no data :('
+            return 'нет информации :('
         }
+    }
+    isData(data) {
+        return data.substring(0, 10)
     }
 
     _extractId = (item) => {
@@ -83,8 +86,8 @@ export default class GotService {
             id: this._extractId(book),
             name: this.isSet(book.name),
             numberOfPages: this.isSet(book.numberOfPages),
-            publisher: this.isSet(book.publisher),
-            released: this.isSet(book.released)
+            publisher: this.isSet(book.publisher) ,
+            released: this.isData((book.released)) || 'нет информации'
         };
     }
 }

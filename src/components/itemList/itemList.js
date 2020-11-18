@@ -1,8 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
 import Spinner from '../spinner/spinner';
-import ErrorMessage from '../errorMessage/errorMessage';
-// import { func } from 'prop-types';
 
 
 const ItemListBlock = styled.li `
